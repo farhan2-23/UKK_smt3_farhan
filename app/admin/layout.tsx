@@ -6,6 +6,7 @@ import {
   AvatarImage,
 } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import { LogoutMenuItem } from "./logout-menu-item"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -41,7 +42,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem variant="destructive">Log out</DropdownMenuItem>
+                <LogoutMenuItem />
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>

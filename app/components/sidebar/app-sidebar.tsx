@@ -21,26 +21,6 @@ const listMenu = [
  "url" : "/admin/user-management",
  "icon" : UserRound
 },
-{
-"name" : "Category",
-"url" : "/admin/category",
-"icon" : List
-},
-{
-"name" : "Jurusan",
-"url" : "/admin/jurusan",
-"icon" : ClipboardList
-},
-{
-"name" : "Article",
-"url" : "/admin/article",
-"icon" : FileText
-},
-{
-"name" : "Profile",
-"url" : "/admin/profile",
-"icon" : CircleUser
-}
 ]
 
 

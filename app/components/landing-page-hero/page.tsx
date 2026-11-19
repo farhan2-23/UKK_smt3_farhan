@@ -12,3 +12,5 @@ export function LandingPageHero() {
         </section>
     )
 }
+
+export default LandingPageHero

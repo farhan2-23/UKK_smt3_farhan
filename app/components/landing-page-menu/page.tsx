@@ -116,3 +116,5 @@ function ListItem({
     </li>
   )
 }
+
+export default MenuLandingPage

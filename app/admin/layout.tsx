@@ -1,5 +1,10 @@
+
 import { AppSidebar } from "@/app/components/sidebar/app-sidebar"
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar"
 import {
   Avatar,
   AvatarFallback,
@@ -16,37 +21,57 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
+import { getAuthenticatedUser } from "@/lib/auth"
+import { redirect } from "next/navigation"
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default async function Layout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  const user = await getAuthenticatedUser()
+
+  if (!user) {
+    redirect("/")
+  }
+
   return (
     <SidebarProvider>
-
       <AppSidebar />
+
       <SidebarInset>
         <header className="flex items-center justify-between p-4">
           <SidebarTrigger />
+
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="rounded-full">
                 <Avatar>
-                  <AvatarImage src="https://github.com/shadcn.png" alt="shadcn" />
+                  <AvatarImage
+                    src="https://github.com/shadcn.png"
+                    alt="shadcn"
+                  />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
               </Button>
             </DropdownMenuTrigger>
+
             <DropdownMenuContent className="w-32">
               <DropdownMenuGroup>
                 <DropdownMenuItem>Profile</DropdownMenuItem>
                 <DropdownMenuItem>Billing</DropdownMenuItem>
                 <DropdownMenuItem>Settings</DropdownMenuItem>
               </DropdownMenuGroup>
+
               <DropdownMenuSeparator />
+
               <DropdownMenuGroup>
                 <LogoutMenuItem />
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
+
         {children}
       </SidebarInset>
     </SidebarProvider>

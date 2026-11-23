@@ -21,6 +21,10 @@ const listMenu = [
  "url" : "/admin/user-management",
  "icon" : UserRound
 },
+{"name" : "Check",
+ "url" : "/admin/check",
+ "icon" : ClipboardList
+},
 ]
 
 

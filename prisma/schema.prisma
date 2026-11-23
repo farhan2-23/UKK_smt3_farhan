@@ -1,17 +1,12 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
- 
-// Get a free hosted Postgres database in seconds: `npx create-db`
- 
-generator client {
+  generator client {
   provider = "prisma-client"
   output   = "../src/generated/prisma"
 }
- 
+
 datasource db {
   provider = "mysql"
 }
- 
+
 model User {
   id        Int      @id @default(autoincrement())
   kodeUser  String   @unique @map("kode_User") @db.VarChar(20)
@@ -22,6 +17,35 @@ model User {
   token     String?  @db.Text
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
- 
+
   @@map("users")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model tbl_facility {
+  kode_facility String   @db.VarChar(20)
+  nama_facility String   @db.VarChar(20)
+  create_at     DateTime @db.DateTime(0)
+  update_at     DateTime @db.DateTime(0)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model tbl_type_unit {
+  id_unit_type   Int
+  nama_type_unit String   @db.VarChar(100)
+  branch_id      Int
+  create_at      DateTime @db.DateTime(0)
+  update_at      DateTime @db.DateTime(0)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model tbl_type_unit_facility {
+  id_unit_type  Int
+  kode_facility String @db.VarChar(20)
+
+  @@ignore
 }

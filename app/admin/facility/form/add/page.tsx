@@ -1,5 +1,5 @@
-import { UserForm } from "../user-form"
+import { FacilityForm } from "../facility-form"
 
-export default function AddUserPage() {
-    return <UserForm />
+export default function AddFacilityPage() {
+    return <FacilityForm />
 }

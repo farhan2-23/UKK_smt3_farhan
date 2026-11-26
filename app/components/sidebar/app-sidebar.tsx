@@ -25,6 +25,10 @@ const listMenu = [
  "url" : "/admin/check",
  "icon" : ClipboardList
 },
+{"name" : "Facility",
+ "url" : "/admin/facility",
+ "icon" : FileText
+}
 ]
 
 

@@ -23,12 +23,11 @@ model User {
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_facility {
-  kode_facility String   @db.VarChar(20)
+  kode_facility String   @id @db.VarChar(20)
   nama_facility String   @db.VarChar(20)
-  create_at     DateTime @db.DateTime(0)
-  update_at     DateTime @db.DateTime(0)
+  create_at     DateTime @default(now()) @db.DateTime(0)
+  update_at     DateTime @updatedAt @db.DateTime(0)
 
-  @@ignore
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.

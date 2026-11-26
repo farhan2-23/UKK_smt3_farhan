@@ -1,19 +1,19 @@
 import { Suspense } from "react"
-import { UserForm } from "../user-form"
+import { FacilityForm } from "../facility-form"
 
-type EditUserPageProps = {
+type EditFacilityPageProps = {
     params: Promise<{ id: string}>
 }
 
-async function EditUserContent({ params }: EditUserPageProps) {
+async function EditFacilityContent({ params }: EditFacilityPageProps) {
     const { id } = await params
-    return <UserForm userId={id} />
+    return <FacilityForm facilityId={id} />
 }
 
-export default function EditUserPage({ params }: EditUserPageProps) {
+export default function EditFacilityPage({ params }: EditFacilityPageProps) {
     return (
-        <Suspense fallback={<div className="p-6">Memuat form user...</div>}>
-            <EditUserContent params={params} />
+        <Suspense fallback={<div className="p-6">Memuat form facility...</div>}>
+            <EditFacilityContent params={params} />
         </Suspense>
     )
 }

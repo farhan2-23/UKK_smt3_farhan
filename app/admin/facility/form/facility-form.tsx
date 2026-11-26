@@ -57,7 +57,7 @@ export function FacilityForm({ kodeFacility }: FacilityFormProps) {
     async function loadFacility() {
       try {
         const response = await fetch(
-          `/api/tbl_facility?kode=${encodeURIComponent(kodeFacility!)}`
+          `/api/facility?kode=${encodeURIComponent(kodeFacility!)}`
         )
 
         // Pastikan respons JSON (bukan halaman 404 HTML)
@@ -103,8 +103,8 @@ export function FacilityForm({ kodeFacility }: FacilityFormProps) {
 
     try {
       const url = kodeFacility
-        ? `/api/tbl_facility?kode=${encodeURIComponent(kodeFacility)}`
-        : "/api/tbl_facility"
+        ? `/api/facility?kode=${encodeURIComponent(kodeFacility)}`
+        : "/api/facility"
 
       const response = await fetch(url, {
         method: kodeFacility ? "PUT" : "POST",

@@ -1,7 +1,7 @@
 // =========================================================================
 // FILE: app/api/tbl_facility/route.ts
 // Semua endpoint facility ada di file ini:
-//   GET    /api/tbl_facility?page=1&pageSize=10   -> daftar (pagination)
+//   GET    /api/?page=1&pageSize=10   -> daftar (pagination)
 //   GET    /api/tbl_facility?kode=FAC0000001      -> satu data (untuk form edit)
 //   POST   /api/tbl_facility                      -> tambah data
 //   PUT    /api/tbl_facility?kode=FAC0000001      -> ubah data

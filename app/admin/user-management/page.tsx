@@ -61,7 +61,11 @@ export default function UserManagementPage() {
     }
  
     useEffect(() => {
-        void loadUsers(1)
+        const loadTimer = window.setTimeout(() => {
+            void loadUsers(1)
+        }, 0)
+
+        return () => window.clearTimeout(loadTimer)
     }, [])
  
     function goToPage(page: number) {

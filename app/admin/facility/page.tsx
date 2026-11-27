@@ -95,7 +95,7 @@ export default function FacilityManagementPage() {
 
     // ---------------------------------------------------------------------
     // HAPUS DATA
-    // DELETE /api/facility/{kode_facility}
+    // DELETE /api/facility?kode={kode_facility}
     // encodeURIComponent dipakai agar kode aman dimasukkan ke URL.
     // ---------------------------------------------------------------------
     async function deleteFacility(facility: Facility) {
@@ -103,7 +103,7 @@ export default function FacilityManagementPage() {
         setError("")
         try {
             const response = await fetch(
-                `/api/facility/${encodeURIComponent(facility.kode_facility)}`,
+                `/api/facility?kode=${encodeURIComponent(facility.kode_facility)}`,
                 { method: "DELETE" }
             )
             const result = await response.json()

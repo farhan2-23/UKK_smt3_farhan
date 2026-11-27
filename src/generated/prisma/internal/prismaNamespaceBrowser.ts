@@ -52,7 +52,9 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   User: 'User',
-  tbl_facility: 'tbl_facility'
+  tbl_facility: 'tbl_facility',
+  tbl_type_unit: 'tbl_type_unit',
+  tbl_type_unit_facility: 'tbl_type_unit_facility'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -96,6 +98,25 @@ export const Tbl_facilityScalarFieldEnum = {
 export type Tbl_facilityScalarFieldEnum = (typeof Tbl_facilityScalarFieldEnum)[keyof typeof Tbl_facilityScalarFieldEnum]
 
 
+export const Tbl_type_unitScalarFieldEnum = {
+  id_unit_type: 'id_unit_type',
+  nama_type_unit: 'nama_type_unit',
+  branch_id: 'branch_id',
+  create_at: 'create_at',
+  update_at: 'update_at'
+} as const
+
+export type Tbl_type_unitScalarFieldEnum = (typeof Tbl_type_unitScalarFieldEnum)[keyof typeof Tbl_type_unitScalarFieldEnum]
+
+
+export const Tbl_type_unit_facilityScalarFieldEnum = {
+  id_unit_type: 'id_unit_type',
+  kode_facility: 'kode_facility'
+} as const
+
+export type Tbl_type_unit_facilityScalarFieldEnum = (typeof Tbl_type_unit_facilityScalarFieldEnum)[keyof typeof Tbl_type_unit_facilityScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -130,4 +151,18 @@ export const tbl_facilityOrderByRelevanceFieldEnum = {
 } as const
 
 export type tbl_facilityOrderByRelevanceFieldEnum = (typeof tbl_facilityOrderByRelevanceFieldEnum)[keyof typeof tbl_facilityOrderByRelevanceFieldEnum]
+
+
+export const tbl_type_unitOrderByRelevanceFieldEnum = {
+  nama_type_unit: 'nama_type_unit'
+} as const
+
+export type tbl_type_unitOrderByRelevanceFieldEnum = (typeof tbl_type_unitOrderByRelevanceFieldEnum)[keyof typeof tbl_type_unitOrderByRelevanceFieldEnum]
+
+
+export const tbl_type_unit_facilityOrderByRelevanceFieldEnum = {
+  kode_facility: 'kode_facility'
+} as const
+
+export type tbl_type_unit_facilityOrderByRelevanceFieldEnum = (typeof tbl_type_unit_facilityOrderByRelevanceFieldEnum)[keyof typeof tbl_type_unit_facilityOrderByRelevanceFieldEnum]
 

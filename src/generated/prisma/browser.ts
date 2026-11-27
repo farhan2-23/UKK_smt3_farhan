@@ -27,3 +27,13 @@ export type User = Prisma.UserModel
  * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
  */
 export type tbl_facility = Prisma.tbl_facilityModel
+/**
+ * Model tbl_type_unit
+ * 
+ */
+export type tbl_type_unit = Prisma.tbl_type_unitModel
+/**
+ * Model tbl_type_unit_facility
+ * 
+ */
+export type tbl_type_unit_facility = Prisma.tbl_type_unit_facilityModel

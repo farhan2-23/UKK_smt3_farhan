@@ -174,6 +174,7 @@ export type tbl_facilityWhereInput = {
   nama_facility?: Prisma.StringFilter<"tbl_facility"> | string
   create_at?: Prisma.DateTimeFilter<"tbl_facility"> | Date | string
   update_at?: Prisma.DateTimeFilter<"tbl_facility"> | Date | string
+  typeUnitFacilities?: Prisma.Tbl_type_unit_facilityListRelationFilter
 }
 
 export type tbl_facilityOrderByWithRelationInput = {
@@ -181,6 +182,7 @@ export type tbl_facilityOrderByWithRelationInput = {
   nama_facility?: Prisma.SortOrder
   create_at?: Prisma.SortOrder
   update_at?: Prisma.SortOrder
+  typeUnitFacilities?: Prisma.tbl_type_unit_facilityOrderByRelationAggregateInput
   _relevance?: Prisma.tbl_facilityOrderByRelevanceInput
 }
 
@@ -192,6 +194,7 @@ export type tbl_facilityWhereUniqueInput = Prisma.AtLeast<{
   nama_facility?: Prisma.StringFilter<"tbl_facility"> | string
   create_at?: Prisma.DateTimeFilter<"tbl_facility"> | Date | string
   update_at?: Prisma.DateTimeFilter<"tbl_facility"> | Date | string
+  typeUnitFacilities?: Prisma.Tbl_type_unit_facilityListRelationFilter
 }, "kode_facility">
 
 export type tbl_facilityOrderByWithAggregationInput = {
@@ -219,6 +222,7 @@ export type tbl_facilityCreateInput = {
   nama_facility: string
   create_at?: Date | string
   update_at?: Date | string
+  typeUnitFacilities?: Prisma.tbl_type_unit_facilityCreateNestedManyWithoutFacilityInput
 }
 
 export type tbl_facilityUncheckedCreateInput = {
@@ -226,6 +230,7 @@ export type tbl_facilityUncheckedCreateInput = {
   nama_facility: string
   create_at?: Date | string
   update_at?: Date | string
+  typeUnitFacilities?: Prisma.tbl_type_unit_facilityUncheckedCreateNestedManyWithoutFacilityInput
 }
 
 export type tbl_facilityUpdateInput = {
@@ -233,6 +238,7 @@ export type tbl_facilityUpdateInput = {
   nama_facility?: Prisma.StringFieldUpdateOperationsInput | string
   create_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   update_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  typeUnitFacilities?: Prisma.tbl_type_unit_facilityUpdateManyWithoutFacilityNestedInput
 }
 
 export type tbl_facilityUncheckedUpdateInput = {
@@ -240,6 +246,7 @@ export type tbl_facilityUncheckedUpdateInput = {
   nama_facility?: Prisma.StringFieldUpdateOperationsInput | string
   create_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   update_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  typeUnitFacilities?: Prisma.tbl_type_unit_facilityUncheckedUpdateManyWithoutFacilityNestedInput
 }
 
 export type tbl_facilityCreateManyInput = {
@@ -290,6 +297,98 @@ export type tbl_facilityMinOrderByAggregateInput = {
   update_at?: Prisma.SortOrder
 }
 
+export type Tbl_facilityScalarRelationFilter = {
+  is?: Prisma.tbl_facilityWhereInput
+  isNot?: Prisma.tbl_facilityWhereInput
+}
+
+export type tbl_facilityCreateNestedOneWithoutTypeUnitFacilitiesInput = {
+  create?: Prisma.XOR<Prisma.tbl_facilityCreateWithoutTypeUnitFacilitiesInput, Prisma.tbl_facilityUncheckedCreateWithoutTypeUnitFacilitiesInput>
+  connectOrCreate?: Prisma.tbl_facilityCreateOrConnectWithoutTypeUnitFacilitiesInput
+  connect?: Prisma.tbl_facilityWhereUniqueInput
+}
+
+export type tbl_facilityUpdateOneRequiredWithoutTypeUnitFacilitiesNestedInput = {
+  create?: Prisma.XOR<Prisma.tbl_facilityCreateWithoutTypeUnitFacilitiesInput, Prisma.tbl_facilityUncheckedCreateWithoutTypeUnitFacilitiesInput>
+  connectOrCreate?: Prisma.tbl_facilityCreateOrConnectWithoutTypeUnitFacilitiesInput
+  upsert?: Prisma.tbl_facilityUpsertWithoutTypeUnitFacilitiesInput
+  connect?: Prisma.tbl_facilityWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.tbl_facilityUpdateToOneWithWhereWithoutTypeUnitFacilitiesInput, Prisma.tbl_facilityUpdateWithoutTypeUnitFacilitiesInput>, Prisma.tbl_facilityUncheckedUpdateWithoutTypeUnitFacilitiesInput>
+}
+
+export type tbl_facilityCreateWithoutTypeUnitFacilitiesInput = {
+  kode_facility: string
+  nama_facility: string
+  create_at?: Date | string
+  update_at?: Date | string
+}
+
+export type tbl_facilityUncheckedCreateWithoutTypeUnitFacilitiesInput = {
+  kode_facility: string
+  nama_facility: string
+  create_at?: Date | string
+  update_at?: Date | string
+}
+
+export type tbl_facilityCreateOrConnectWithoutTypeUnitFacilitiesInput = {
+  where: Prisma.tbl_facilityWhereUniqueInput
+  create: Prisma.XOR<Prisma.tbl_facilityCreateWithoutTypeUnitFacilitiesInput, Prisma.tbl_facilityUncheckedCreateWithoutTypeUnitFacilitiesInput>
+}
+
+export type tbl_facilityUpsertWithoutTypeUnitFacilitiesInput = {
+  update: Prisma.XOR<Prisma.tbl_facilityUpdateWithoutTypeUnitFacilitiesInput, Prisma.tbl_facilityUncheckedUpdateWithoutTypeUnitFacilitiesInput>
+  create: Prisma.XOR<Prisma.tbl_facilityCreateWithoutTypeUnitFacilitiesInput, Prisma.tbl_facilityUncheckedCreateWithoutTypeUnitFacilitiesInput>
+  where?: Prisma.tbl_facilityWhereInput
+}
+
+export type tbl_facilityUpdateToOneWithWhereWithoutTypeUnitFacilitiesInput = {
+  where?: Prisma.tbl_facilityWhereInput
+  data: Prisma.XOR<Prisma.tbl_facilityUpdateWithoutTypeUnitFacilitiesInput, Prisma.tbl_facilityUncheckedUpdateWithoutTypeUnitFacilitiesInput>
+}
+
+export type tbl_facilityUpdateWithoutTypeUnitFacilitiesInput = {
+  kode_facility?: Prisma.StringFieldUpdateOperationsInput | string
+  nama_facility?: Prisma.StringFieldUpdateOperationsInput | string
+  create_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  update_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type tbl_facilityUncheckedUpdateWithoutTypeUnitFacilitiesInput = {
+  kode_facility?: Prisma.StringFieldUpdateOperationsInput | string
+  nama_facility?: Prisma.StringFieldUpdateOperationsInput | string
+  create_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  update_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+
+/**
+ * Count Type Tbl_facilityCountOutputType
+ */
+
+export type Tbl_facilityCountOutputType = {
+  typeUnitFacilities: number
+}
+
+export type Tbl_facilityCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  typeUnitFacilities?: boolean | Tbl_facilityCountOutputTypeCountTypeUnitFacilitiesArgs
+}
+
+/**
+ * Tbl_facilityCountOutputType without action
+ */
+export type Tbl_facilityCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Tbl_facilityCountOutputType
+   */
+  select?: Prisma.Tbl_facilityCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * Tbl_facilityCountOutputType without action
+ */
+export type Tbl_facilityCountOutputTypeCountTypeUnitFacilitiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.tbl_type_unit_facilityWhereInput
+}
 
 
 export type tbl_facilitySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -297,6 +396,8 @@ export type tbl_facilitySelect<ExtArgs extends runtime.Types.Extensions.Internal
   nama_facility?: boolean
   create_at?: boolean
   update_at?: boolean
+  typeUnitFacilities?: boolean | Prisma.tbl_facility$typeUnitFacilitiesArgs<ExtArgs>
+  _count?: boolean | Prisma.Tbl_facilityCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["tbl_facility"]>
 
 
@@ -309,10 +410,16 @@ export type tbl_facilitySelectScalar = {
 }
 
 export type tbl_facilityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"kode_facility" | "nama_facility" | "create_at" | "update_at", ExtArgs["result"]["tbl_facility"]>
+export type tbl_facilityInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  typeUnitFacilities?: boolean | Prisma.tbl_facility$typeUnitFacilitiesArgs<ExtArgs>
+  _count?: boolean | Prisma.Tbl_facilityCountOutputTypeDefaultArgs<ExtArgs>
+}
 
 export type $tbl_facilityPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "tbl_facility"
-  objects: {}
+  objects: {
+    typeUnitFacilities: Prisma.$tbl_type_unit_facilityPayload<ExtArgs>[]
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     kode_facility: string
     nama_facility: string
@@ -658,6 +765,7 @@ readonly fields: tbl_facilityFieldRefs;
  */
 export interface Prisma__tbl_facilityClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  typeUnitFacilities<T extends Prisma.tbl_facility$typeUnitFacilitiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.tbl_facility$typeUnitFacilitiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$tbl_type_unit_facilityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -708,6 +816,10 @@ export type tbl_facilityFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.
    */
   omit?: Prisma.tbl_facilityOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.tbl_facilityInclude<ExtArgs> | null
+  /**
    * Filter, which tbl_facility to fetch.
    */
   where: Prisma.tbl_facilityWhereUniqueInput
@@ -726,6 +838,10 @@ export type tbl_facilityFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Exte
    */
   omit?: Prisma.tbl_facilityOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.tbl_facilityInclude<ExtArgs> | null
+  /**
    * Filter, which tbl_facility to fetch.
    */
   where: Prisma.tbl_facilityWhereUniqueInput
@@ -743,6 +859,10 @@ export type tbl_facilityFindFirstArgs<ExtArgs extends runtime.Types.Extensions.I
    * Omit specific fields from the tbl_facility
    */
   omit?: Prisma.tbl_facilityOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.tbl_facilityInclude<ExtArgs> | null
   /**
    * Filter, which tbl_facility to fetch.
    */
@@ -792,6 +912,10 @@ export type tbl_facilityFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Exten
    */
   omit?: Prisma.tbl_facilityOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.tbl_facilityInclude<ExtArgs> | null
+  /**
    * Filter, which tbl_facility to fetch.
    */
   where?: Prisma.tbl_facilityWhereInput
@@ -839,6 +963,10 @@ export type tbl_facilityFindManyArgs<ExtArgs extends runtime.Types.Extensions.In
    * Omit specific fields from the tbl_facility
    */
   omit?: Prisma.tbl_facilityOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.tbl_facilityInclude<ExtArgs> | null
   /**
    * Filter, which tbl_facilities to fetch.
    */
@@ -888,6 +1016,10 @@ export type tbl_facilityCreateArgs<ExtArgs extends runtime.Types.Extensions.Inte
    */
   omit?: Prisma.tbl_facilityOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.tbl_facilityInclude<ExtArgs> | null
+  /**
    * The data needed to create a tbl_facility.
    */
   data: Prisma.XOR<Prisma.tbl_facilityCreateInput, Prisma.tbl_facilityUncheckedCreateInput>
@@ -916,6 +1048,10 @@ export type tbl_facilityUpdateArgs<ExtArgs extends runtime.Types.Extensions.Inte
    * Omit specific fields from the tbl_facility
    */
   omit?: Prisma.tbl_facilityOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.tbl_facilityInclude<ExtArgs> | null
   /**
    * The data needed to update a tbl_facility.
    */
@@ -957,6 +1093,10 @@ export type tbl_facilityUpsertArgs<ExtArgs extends runtime.Types.Extensions.Inte
    */
   omit?: Prisma.tbl_facilityOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.tbl_facilityInclude<ExtArgs> | null
+  /**
    * The filter to search for the tbl_facility to update in case it exists.
    */
   where: Prisma.tbl_facilityWhereUniqueInput
@@ -983,6 +1123,10 @@ export type tbl_facilityDeleteArgs<ExtArgs extends runtime.Types.Extensions.Inte
    */
   omit?: Prisma.tbl_facilityOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.tbl_facilityInclude<ExtArgs> | null
+  /**
    * Filter which tbl_facility to delete.
    */
   where: Prisma.tbl_facilityWhereUniqueInput
@@ -1003,6 +1147,30 @@ export type tbl_facilityDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.
 }
 
 /**
+ * tbl_facility.typeUnitFacilities
+ */
+export type tbl_facility$typeUnitFacilitiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the tbl_type_unit_facility
+   */
+  select?: Prisma.tbl_type_unit_facilitySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the tbl_type_unit_facility
+   */
+  omit?: Prisma.tbl_type_unit_facilityOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.tbl_type_unit_facilityInclude<ExtArgs> | null
+  where?: Prisma.tbl_type_unit_facilityWhereInput
+  orderBy?: Prisma.tbl_type_unit_facilityOrderByWithRelationInput | Prisma.tbl_type_unit_facilityOrderByWithRelationInput[]
+  cursor?: Prisma.tbl_type_unit_facilityWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.Tbl_type_unit_facilityScalarFieldEnum | Prisma.Tbl_type_unit_facilityScalarFieldEnum[]
+}
+
+/**
  * tbl_facility without action
  */
 export type tbl_facilityDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1014,4 +1182,8 @@ export type tbl_facilityDefaultArgs<ExtArgs extends runtime.Types.Extensions.Int
    * Omit specific fields from the tbl_facility
    */
   omit?: Prisma.tbl_facilityOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.tbl_facilityInclude<ExtArgs> | null
 }

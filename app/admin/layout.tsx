@@ -1,4 +1,5 @@
 
+import { Suspense, type ReactNode } from "react"
 import { AppSidebar } from "@/app/components/sidebar/app-sidebar"
 import {
   SidebarInset,
@@ -24,10 +25,10 @@ import {
 import { getAuthenticatedUser } from "@/lib/auth"
 import { redirect } from "next/navigation"
 
-export default async function Layout({
+async function AuthenticatedAdminLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: ReactNode
 }) {
   const user = await getAuthenticatedUser()
 
@@ -75,5 +76,13 @@ export default async function Layout({
         {children}
       </SidebarInset>
     </SidebarProvider>
+  )
+}
+
+export default function Layout({ children }: { children: ReactNode }) {
+  return (
+    <Suspense fallback={<div className="p-6">Memuat halaman admin...</div>}>
+      <AuthenticatedAdminLayout>{children}</AuthenticatedAdminLayout>
+    </Suspense>
   )
 }

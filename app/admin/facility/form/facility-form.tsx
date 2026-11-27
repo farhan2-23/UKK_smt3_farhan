@@ -28,8 +28,8 @@ type FacilityFormProps = {
   kodeFacility?: string
 }
 
-// Batas panjang nama, sesuai kolom database VarChar(20)
-const MAX_NAMA = 20
+// Batas panjang nama, sesuai kolom database VarChar(100)
+const MAX_NAMA = 100
 
 export function FacilityForm({ kodeFacility }: FacilityFormProps) {
   const router = useRouter()

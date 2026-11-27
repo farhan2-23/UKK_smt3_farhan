@@ -10,4 +10,6 @@
  */
 export type * from './models/User'
 export type * from './models/tbl_facility'
+export type * from './models/tbl_type_unit'
+export type * from './models/tbl_type_unit_facility'
 export type * from './commonInputTypes'

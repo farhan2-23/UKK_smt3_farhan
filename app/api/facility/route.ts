@@ -55,18 +55,18 @@ function getUniqueTarget(error: unknown): string | null {
 // =========================================================================
 function parseNama(value: unknown): string | null {
   const nama = typeof value === "string" ? value.trim() : ""
-  if (!nama || nama.length > 20) return null
+  if (!nama || nama.length > 100) return null
   return nama
 }
 
 // =========================================================================
 // HELPER: AUTO NUMBER KODE FACILITY
-// Cari kode terakhir berawalan "FAC", ambil angkanya, tambah 1.
-// Contoh hasil: FAC0000001, FAC0000002, dst.
+// Cari kode terakhir berawalan "FCT", ambil angkanya, tambah 1.
+// Contoh hasil: FCT001, FCT002, dst.
 // Parameter `tx` = transaction client agar berada dalam satu transaksi.
 // =========================================================================
 async function generateKodeFacility(tx: Pick<typeof prisma, "tbl_facility">) {
-  const prefix = "FAC"
+  const prefix = "FCT"
 
   const last = await tx.tbl_facility.findFirst({
     where: { kode_facility: { startsWith: prefix } },
@@ -76,14 +76,14 @@ async function generateKodeFacility(tx: Pick<typeof prisma, "tbl_facility">) {
 
   // Belum ada data -> mulai dari nomor 1
   if (!last?.kode_facility) {
-    return `${prefix}0000001`
+    return `${prefix}001`
   }
 
   const lastNumber = Number.parseInt(last.kode_facility.slice(prefix.length), 10)
   const nextNumber = Number.isNaN(lastNumber) ? 1 : lastNumber + 1
 
-  // padStart(7, "0") -> 1 menjadi "0000001"
-  return `${prefix}${String(nextNumber).padStart(7, "0")}`
+  // padStart(3, "0") -> 1 menjadi "001", 12 menjadi "012", dst.
+  return `${prefix}${String(nextNumber).padStart(3, "0")}`
 }
 
 // =========================================================================
@@ -164,7 +164,7 @@ export async function POST(request: Request) {
   const nama_facility = parseNama(body.nama_facility)
   if (!nama_facility) {
     return NextResponse.json(
-      { error: "Nama facility tidak valid (maksimal 20 karakter)." },
+      { error: "Nama facility tidak valid (maksimal 100 karakter)." },
       { status: 400 }
     )
   }
@@ -239,7 +239,7 @@ export async function PUT(request: Request) {
   const nama_facility = parseNama(body.nama_facility)
   if (!nama_facility) {
     return NextResponse.json(
-      { error: "Nama facility tidak valid (maksimal 20 karakter)." },
+      { error: "Nama facility tidak valid (maksimal 100 karakter)." },
       { status: 400 }
     )
   }

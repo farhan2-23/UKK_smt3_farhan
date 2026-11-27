@@ -10,7 +10,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { ClipboardList, FileText, House, CircleUser, List, UserRound } from "lucide-react"
+import { ClipboardList, FileText, House, CircleUser, List, UserRound, SquareCheck } from "lucide-react"
 
 const listMenu = [
   {"name" : "Dashboard",
@@ -28,6 +28,10 @@ const listMenu = [
 {"name" : "Facility",
  "url" : "/admin/facility",
  "icon" : FileText
+},
+{"name" : "Type unit",
+ "url" : "/admin/type_unit",
+ "icon" : SquareCheck
 }
 ]
 

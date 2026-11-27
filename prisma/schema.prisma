@@ -28,23 +28,25 @@ model tbl_facility {
   create_at     DateTime @default(now()) @db.DateTime(0)
   update_at     DateTime @updatedAt @db.DateTime(0)
 
+  typeUnitFacilities tbl_type_unit_facility[]
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_type_unit {
-  id_unit_type   Int
+  id_unit_type   Int      @id @default(autoincrement())
   nama_type_unit String   @db.VarChar(100)
   branch_id      Int
-  create_at      DateTime @db.DateTime(0)
-  update_at      DateTime @db.DateTime(0)
+  create_at      DateTime @default(now()) @db.DateTime(0)
+  update_at      DateTime @updatedAt @db.DateTime(0)
 
-  @@ignore
+  facilities tbl_type_unit_facility[]
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_type_unit_facility {
   id_unit_type  Int
   kode_facility String @db.VarChar(20)
 
-  @@ignore
+  typeUnit tbl_type_unit @relation(fields: [id_unit_type], references: [id_unit_type], onDelete: Cascade)
+  facility tbl_facility @relation(fields: [kode_facility], references: [kode_facility], onDelete: Cascade)
+
+  @@id([id_unit_type, kode_facility])
 }

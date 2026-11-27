@@ -398,7 +398,9 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   User: 'User',
-  tbl_facility: 'tbl_facility'
+  tbl_facility: 'tbl_facility',
+  tbl_type_unit: 'tbl_type_unit',
+  tbl_type_unit_facility: 'tbl_type_unit_facility'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -414,7 +416,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "tbl_facility"
+    modelProps: "user" | "tbl_facility" | "tbl_type_unit" | "tbl_type_unit_facility"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -550,6 +552,138 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    tbl_type_unit: {
+      payload: Prisma.$tbl_type_unitPayload<ExtArgs>
+      fields: Prisma.tbl_type_unitFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.tbl_type_unitFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unitPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.tbl_type_unitFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unitPayload>
+        }
+        findFirst: {
+          args: Prisma.tbl_type_unitFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unitPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.tbl_type_unitFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unitPayload>
+        }
+        findMany: {
+          args: Prisma.tbl_type_unitFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unitPayload>[]
+        }
+        create: {
+          args: Prisma.tbl_type_unitCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unitPayload>
+        }
+        createMany: {
+          args: Prisma.tbl_type_unitCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.tbl_type_unitDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unitPayload>
+        }
+        update: {
+          args: Prisma.tbl_type_unitUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unitPayload>
+        }
+        deleteMany: {
+          args: Prisma.tbl_type_unitDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.tbl_type_unitUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.tbl_type_unitUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unitPayload>
+        }
+        aggregate: {
+          args: Prisma.Tbl_type_unitAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTbl_type_unit>
+        }
+        groupBy: {
+          args: Prisma.tbl_type_unitGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Tbl_type_unitGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.tbl_type_unitCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Tbl_type_unitCountAggregateOutputType> | number
+        }
+      }
+    }
+    tbl_type_unit_facility: {
+      payload: Prisma.$tbl_type_unit_facilityPayload<ExtArgs>
+      fields: Prisma.tbl_type_unit_facilityFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.tbl_type_unit_facilityFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unit_facilityPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.tbl_type_unit_facilityFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unit_facilityPayload>
+        }
+        findFirst: {
+          args: Prisma.tbl_type_unit_facilityFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unit_facilityPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.tbl_type_unit_facilityFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unit_facilityPayload>
+        }
+        findMany: {
+          args: Prisma.tbl_type_unit_facilityFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unit_facilityPayload>[]
+        }
+        create: {
+          args: Prisma.tbl_type_unit_facilityCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unit_facilityPayload>
+        }
+        createMany: {
+          args: Prisma.tbl_type_unit_facilityCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.tbl_type_unit_facilityDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unit_facilityPayload>
+        }
+        update: {
+          args: Prisma.tbl_type_unit_facilityUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unit_facilityPayload>
+        }
+        deleteMany: {
+          args: Prisma.tbl_type_unit_facilityDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.tbl_type_unit_facilityUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.tbl_type_unit_facilityUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$tbl_type_unit_facilityPayload>
+        }
+        aggregate: {
+          args: Prisma.Tbl_type_unit_facilityAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTbl_type_unit_facility>
+        }
+        groupBy: {
+          args: Prisma.tbl_type_unit_facilityGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Tbl_type_unit_facilityGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.tbl_type_unit_facilityCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Tbl_type_unit_facilityCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -614,6 +748,25 @@ export const Tbl_facilityScalarFieldEnum = {
 export type Tbl_facilityScalarFieldEnum = (typeof Tbl_facilityScalarFieldEnum)[keyof typeof Tbl_facilityScalarFieldEnum]
 
 
+export const Tbl_type_unitScalarFieldEnum = {
+  id_unit_type: 'id_unit_type',
+  nama_type_unit: 'nama_type_unit',
+  branch_id: 'branch_id',
+  create_at: 'create_at',
+  update_at: 'update_at'
+} as const
+
+export type Tbl_type_unitScalarFieldEnum = (typeof Tbl_type_unitScalarFieldEnum)[keyof typeof Tbl_type_unitScalarFieldEnum]
+
+
+export const Tbl_type_unit_facilityScalarFieldEnum = {
+  id_unit_type: 'id_unit_type',
+  kode_facility: 'kode_facility'
+} as const
+
+export type Tbl_type_unit_facilityScalarFieldEnum = (typeof Tbl_type_unit_facilityScalarFieldEnum)[keyof typeof Tbl_type_unit_facilityScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -648,6 +801,20 @@ export const tbl_facilityOrderByRelevanceFieldEnum = {
 } as const
 
 export type tbl_facilityOrderByRelevanceFieldEnum = (typeof tbl_facilityOrderByRelevanceFieldEnum)[keyof typeof tbl_facilityOrderByRelevanceFieldEnum]
+
+
+export const tbl_type_unitOrderByRelevanceFieldEnum = {
+  nama_type_unit: 'nama_type_unit'
+} as const
+
+export type tbl_type_unitOrderByRelevanceFieldEnum = (typeof tbl_type_unitOrderByRelevanceFieldEnum)[keyof typeof tbl_type_unitOrderByRelevanceFieldEnum]
+
+
+export const tbl_type_unit_facilityOrderByRelevanceFieldEnum = {
+  kode_facility: 'kode_facility'
+} as const
+
+export type tbl_type_unit_facilityOrderByRelevanceFieldEnum = (typeof tbl_type_unit_facilityOrderByRelevanceFieldEnum)[keyof typeof tbl_type_unit_facilityOrderByRelevanceFieldEnum]
 
 
 
@@ -836,6 +1003,8 @@ export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaC
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
   tbl_facility?: Prisma.tbl_facilityOmit
+  tbl_type_unit?: Prisma.tbl_type_unitOmit
+  tbl_type_unit_facility?: Prisma.tbl_type_unit_facilityOmit
 }
 
 /* Types for Logging */

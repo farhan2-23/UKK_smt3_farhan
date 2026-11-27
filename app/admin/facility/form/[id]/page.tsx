@@ -7,7 +7,7 @@ type EditFacilityPageProps = {
 
 async function EditFacilityContent({ params }: EditFacilityPageProps) {
     const { id } = await params
-    return <FacilityForm facilityId={id} />
+    return <FacilityForm kodeFacility={id} />
 }
 
 export default function EditFacilityPage({ params }: EditFacilityPageProps) {
